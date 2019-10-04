@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">hexConverter</string>
+    <string translatable="true" name="app_nameEng">hexConverter</string>
+    <string name="enterHexEng">enter hex here:</string>
+    <string name="hexValueEng">hexadecimal value</string>
 </resources>
