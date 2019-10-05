@@ -4,5 +4,5 @@
     <string name="app_nameEng">Convertisseur hexadécimal</string>
     <string name="enterHex">Entrez votre hexadécimal ici:</string>
     <string name="hexUnit">16</string>
-    <string name="hexValue">valeur hexadécimale</string>
+    <string name="hexValue">valeur hex</string>
 </resources>
