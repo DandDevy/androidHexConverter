@@ -1,5 +1,7 @@
 <resources>
-    <string translatable="true" name="app_nameEng">hexConverter</string>
-    <string name="enterHexEng">enter hex here:</string>
-    <string name="hexValueEng">hexadecimal value</string>
+    <string name="app_nameEng" translatable="true">Hexadecimal Converter</string>
+    <string name="enterHex" translatable="true">Enter your hexadecimal here:</string>
+    <string name="Enter" translatable="true">Enter</string>
+    <string name="hexUnit" translatable="true">16</string>
+    <string name="hexValue" translatable="true">hex value</string>
 </resources>

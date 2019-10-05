@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Enter">Entrer</string>
+    <string name="app_nameEng">Convertisseur hexadécimal</string>
+    <string name="enterHex">Entrez votre hexadécimal ici:</string>
+    <string name="hexUnit">16</string>
+    <string name="hexValue">valeur hexadécimale</string>
+</resources>
