@@ -3,6 +3,9 @@
     <string name="Enter">Entrer</string>
     <string name="app_nameEng">Convertisseur hexadécimal</string>
     <string name="enterHex">Entrez votre hexadécimal ici:</string>
-    <string name="hexUnit">16</string>
+    <string name="hexUnit">base 16</string>
     <string name="hexValue">valeur hex</string>
+    <string name="enterDec">Entrez votre nombre ici:</string>
+    <string name="decUnit">base 10</string>
+    <string name="intValue">valeur entière</string>
 </resources>

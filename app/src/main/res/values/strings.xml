@@ -1,7 +1,10 @@
 <resources>
     <string name="app_nameEng" translatable="true">Hexadecimal Converter</string>
     <string name="enterHex" translatable="true">Enter your hexadecimal here:</string>
+    <string name="enterDec" translatable="true">Enter your number here:</string>
     <string name="Enter" translatable="true">Enter</string>
-    <string name="hexUnit" translatable="true">16</string>
+    <string name="hexUnit" translatable="true">base 16</string>
+    <string name="decUnit" translatable="true">base 10</string>
     <string name="hexValue" translatable="true">hex value</string>
+    <string name="intValue" translatable="true">integer value</string>
 </resources>
