@@ -8,4 +8,6 @@
     <string name="enterDec">Entrez votre nombre ici:</string>
     <string name="decUnit">base 10</string>
     <string name="intValue">valeur entière</string>
+    <string name="hereIsYourHex">Voici votre hex:</string>
+    <string name="goBack">retourner</string>
 </resources>

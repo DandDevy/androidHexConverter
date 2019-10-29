@@ -3,6 +3,7 @@ package com.college_project.hexconverter;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 public class DecToHexActivity extends AppCompatActivity {
@@ -12,7 +13,15 @@ public class DecToHexActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dec_to_hex);
 
-        TextView textView = (TextView) findViewById(R.id.textView2);
-        textView.setText(getIntent().getStringExtra("intValue"));
+        String intValueAsString = getIntent().getStringExtra("intValue");
+
+        int intValue = Integer.valueOf(intValueAsString);
+
+        String hexOfValue = Integer.toString(intValue, 16);
+
+        TextView textView = (TextView) findViewById(R.id.hexValue);
+
+        textView.setText(hexOfValue);
     }
+
 }

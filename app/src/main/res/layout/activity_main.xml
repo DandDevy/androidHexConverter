@@ -51,11 +51,11 @@
 
                 <TextView
                     android:id="@+id/intValueUnit"
-                    android:layout_width="45dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/decUnit"
-                    android:textSize="@integer/intValueUnit" />
+                    android:textSize="15dp" />
             </LinearLayout>
         </LinearLayout>
 

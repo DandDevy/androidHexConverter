@@ -7,4 +7,6 @@
     <string name="decUnit" translatable="true">base 10</string>
     <string name="hexValue" translatable="true">hex value</string>
     <string name="intValue" translatable="true">integer value</string>
+    <string name="hereIsYourHex" translatable="true">Here is your hex:</string>
+    <string name="goBack" translatable="true">go back</string>
 </resources>
