@@ -9,4 +9,7 @@
     <string name="intValue" translatable="true">integer value</string>
     <string name="hereIsYourHex" translatable="true">Here is your hex:</string>
     <string name="goBack" translatable="true">go back</string>
+    <string name="oneString">one string</string>
+    <string name="spaced">spaced by byte</string>
+    <string name="viewWithHexPrefix">hex prefix</string>
 </resources>

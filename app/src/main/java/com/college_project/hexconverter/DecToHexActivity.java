@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 public class DecToHexActivity extends AppCompatActivity {
@@ -24,4 +25,8 @@ public class DecToHexActivity extends AppCompatActivity {
         textView.setText(hexOfValue);
     }
 
+    public void returnToMain(View view) {
+        System.out.println("return to main");
+
+    }
 }

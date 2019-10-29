@@ -10,4 +10,7 @@
     <string name="intValue">valeur entière</string>
     <string name="hereIsYourHex">Voici votre hex:</string>
     <string name="goBack">retourner</string>
+    <string name="oneString">une chaîne</string>
+    <string name="spaced">" espacé par octet"</string>
+    <string name="viewWithHexPrefix">" préfixe hexadécimal"</string>
 </resources>

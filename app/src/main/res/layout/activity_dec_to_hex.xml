@@ -63,12 +63,43 @@
             android:layout_height="44dp"
             android:orientation="vertical"></LinearLayout>
 
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="86dp" >
+
+            <RadioButton
+                android:id="@+id/radioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/oneString" />
+
+            <RadioButton
+                android:id="@+id/radioButton2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/spaced" />
+
+            <RadioButton
+                android:id="@+id/radioButton3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/viewWithHexPrefix" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:orientation="vertical"></LinearLayout>
+
         <Button
             android:id="@+id/button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick=""
+            android:onClick="returnToMain"
             android:text="@string/goBack" />
+
+
 
     </LinearLayout>
 
