@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import com.college_project.hexconverter.HexToDecActivity;
 import com.college_project.hexconverter.R;
 import com.college_project.hexconverter.controllers.InputValidation;
 
@@ -40,5 +41,15 @@ public class MainActivity extends AppCompatActivity {
 
             startActivity(decToHexConverter);
         }
+    }
+
+    /**
+     * <p>swap converters</p>
+     * @param view
+     */
+    public void swap(View view) {
+        Intent hexToDecActivityintent = new Intent(this, HexToDecActivity.class);
+
+        startActivity(hexToDecActivityintent);
     }
 }

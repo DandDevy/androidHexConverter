@@ -12,4 +12,5 @@
     <string name="oneString">one string</string>
     <string name="spaced">spaced by byte</string>
     <string name="viewWithHexPrefix">hex prefix</string>
+    <string name="swap">swap</string>
 </resources>
