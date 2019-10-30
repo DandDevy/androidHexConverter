@@ -36,6 +36,10 @@ public class HexadecimalFactoryTesting {
     public void SpacedHexadecimalDisplayFactory_isCorrect() {
         SpacedHexadecimalDisplayFactory hexadecimalDisplayFactory = new SpacedHexadecimalDisplayFactory();
         assertEquals("as d", hexadecimalDisplayFactory.getHexadecimal("asd"));
+        assertEquals("as dd", hexadecimalDisplayFactory.getHexadecimal("asdd"));
+        assertEquals("as  d d", hexadecimalDisplayFactory.getHexadecimal("as dd"));
+        assertEquals("as dd e", hexadecimalDisplayFactory.getHexadecimal("asdde"));
+        assertEquals("as  ", hexadecimalDisplayFactory.getHexadecimal("as "));
     }
 
 }
