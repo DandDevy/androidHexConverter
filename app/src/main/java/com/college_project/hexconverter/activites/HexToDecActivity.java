@@ -8,8 +8,8 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.college_project.hexconverter.R;
-import com.college_project.hexconverter.activites.MainActivity;
-import com.college_project.hexconverter.controllers.InputValidation;
+import com.college_project.hexconverter.controllers.HexConverter;
+import  com.college_project.hexconverter.controllers.InputValidation;
 
 public class HexToDecActivity extends AppCompatActivity {
 
@@ -23,6 +23,8 @@ public class HexToDecActivity extends AppCompatActivity {
     public void convertHexToDec(View view) {
         String hexValueAsString = ((EditText) findViewById(R.id.hexValue)).getText().toString();
         if(InputValidation.isStringConvertibleFromHexToDec(hexValueAsString)){
+
+            String conversionResult = HexConverter.stringOfHexToStringOfInt(hexValueAsString);
 
         }
     }

@@ -35,6 +35,7 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:hint="@string/intValue"
+                android:maxLength="9"
                 android:inputType="number" />
 
             <LinearLayout
