@@ -11,6 +11,8 @@ import com.college_project.hexconverter.R;
 import com.college_project.hexconverter.controllers.HexConverter;
 import com.college_project.hexconverter.controllers.InputValidation;
 
+import static com.college_project.hexconverter.activites.HexToDecActivity.STRING_OF_INT_CONVERTED_FROM_HEX_INTENT_NAME;
+
 public class MainActivity extends AppCompatActivity {
 
     public static final String HEX_OF_VALUE_INTENT_EXTRA_NAME = "hexOfValue";
@@ -19,6 +21,19 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        checkForIntentFromHexToDec();
+    }
+
+    /**
+     * <p>if an intent is sent it will set the field to it</p>
+     */
+    private void checkForIntentFromHexToDec() {
+        String convertedHexToString = getIntent().getStringExtra(STRING_OF_INT_CONVERTED_FROM_HEX_INTENT_NAME);
+        
+        if(convertedHexToString != null){
+            EditText editTextforInValue = (EditText) findViewById(R.id.intValue);
+            editTextforInValue.setText(convertedHexToString);
+        }
     }
 
     /**

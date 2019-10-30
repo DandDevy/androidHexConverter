@@ -13,6 +13,8 @@ import  com.college_project.hexconverter.controllers.InputValidation;
 
 public class HexToDecActivity extends AppCompatActivity {
 
+    public static final String STRING_OF_INT_CONVERTED_FROM_HEX_INTENT_NAME = "convertedHexToInt";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +28,9 @@ public class HexToDecActivity extends AppCompatActivity {
 
             String conversionResult = HexConverter.stringOfHexToStringOfInt(hexValueAsString);
 
+            Intent convertHexToDec = new Intent(this, MainActivity.class);
+            convertHexToDec.putExtra(STRING_OF_INT_CONVERTED_FROM_HEX_INTENT_NAME, conversionResult);
+            startActivity(convertHexToDec);
         }
     }
 
