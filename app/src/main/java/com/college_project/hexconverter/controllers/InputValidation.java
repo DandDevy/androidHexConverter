@@ -4,6 +4,11 @@ public class InputValidation {
 
     public static boolean isStringConvertibleToHex(String intValueAsString) {
 
-        return true;
+        boolean res = true;
+
+        if(intValueAsString.length() == 0){
+            res = false;
+        }
+        return res;
     }
 }
