@@ -11,9 +11,9 @@ import java.util.Hashtable;
 import java.util.Map;
 
 import com.college_project.hexconverter.R;
-import com.college_project.hexconverter.models.factories.HexidecimalFactories.HexWithPrefixHexidecimalDisplayFactory;
-import com.college_project.hexconverter.models.factories.HexidecimalFactories.OneStringHexidecimalDisplayFactory;
-import com.college_project.hexconverter.models.factories.HexidecimalFactories.SpacedHexidecimalDisplayFactory;
+import com.college_project.hexconverter.models.factories.HexadecimalFactories.HexWithPrefixHexadecimalDisplayFactory;
+import com.college_project.hexconverter.models.factories.HexadecimalFactories.OneStringHexadecimalDisplayFactory;
+import com.college_project.hexconverter.models.factories.HexadecimalFactories.SpacedHexadecimalDisplayFactory;
 
 import static com.college_project.hexconverter.activites.MainActivity.HEX_OF_VALUE_INTENT_EXTRA_NAME;
 
@@ -79,20 +79,20 @@ public class DecToHexActivity extends AppCompatActivity {
         System.out.println("my key: " + key);
 
         if(key.equals(ONE_STRING)) {
-            OneStringHexidecimalDisplayFactory oneStringHexidecimalFactory = new OneStringHexidecimalDisplayFactory();
-            String factoryValue = oneStringHexidecimalFactory.getHexidecimal(hexOfValue);
+            OneStringHexadecimalDisplayFactory oneStringHexidecimalFactory = new OneStringHexadecimalDisplayFactory();
+            String factoryValue = oneStringHexidecimalFactory.getHexadecimal(hexOfValue);
             textView.setText(factoryValue);
         }
 
         else if(key.equals(HEX_PREFIX_ID)) {
-            HexWithPrefixHexidecimalDisplayFactory hexWithPrefixHexidecimalFactory = new HexWithPrefixHexidecimalDisplayFactory();
-            String factoryValue = hexWithPrefixHexidecimalFactory.getHexidecimal(hexOfValue);
+            HexWithPrefixHexadecimalDisplayFactory hexWithPrefixHexidecimalFactory = new HexWithPrefixHexadecimalDisplayFactory();
+            String factoryValue = hexWithPrefixHexidecimalFactory.getHexadecimal(hexOfValue);
             textView.setText(factoryValue);
         }
 
         else {
-            SpacedHexidecimalDisplayFactory spacedHexidecimalDisplayFactory = new SpacedHexidecimalDisplayFactory();
-            String factoryValue = spacedHexidecimalDisplayFactory.getHexidecimal(hexOfValue);
+            SpacedHexadecimalDisplayFactory spacedHexidecimalDisplayFactory = new SpacedHexadecimalDisplayFactory();
+            String factoryValue = spacedHexidecimalDisplayFactory.getHexadecimal(hexOfValue);
             textView.setText(factoryValue);
         }
 

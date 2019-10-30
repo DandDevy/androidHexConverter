@@ -1,15 +1,24 @@
-package com.college_project.hexconverter.models.factories.HexidecimalFactories;
+package com.college_project.hexconverter.models.factories.HexadecimalFactories;
 
-import com.college_project.hexconverter.models.factories.InterfaceHexidecimalDisplayFactory;
+import com.college_project.hexconverter.models.factories.InterfaceHexadecimalDisplayFactory;
 
-public class SpacedHexidecimalDisplayFactory implements InterfaceHexidecimalDisplayFactory {
+/**
+ * <h1>SpacedHexadecimalDisplayFactory</h1>
+ * <p>SpacedHexadecimalDisplayFactory implements InterfaceHexadecimalDisplayFactory. For spaced hexadecimal display</p>
+ */
+public class SpacedHexadecimalDisplayFactory implements InterfaceHexadecimalDisplayFactory {
 
-    private static final String SPACED = "spaced";
     private static final String SPACE = " ";
     private static final int SPACING = 2;
 
+
+    /**
+     * <p>returns a String with spaces for every period</p>
+     * @param hexValue
+     * @return
+     */
     @Override
-    public String getHexidecimal(String hexValue) {
+    public String getHexadecimal(String hexValue) {
         String res = "";
         String value = hexValue;
         if(value.length() > 2) {
