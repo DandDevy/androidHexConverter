@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 
 import com.college_project.hexconverter.activites.MainActivity;
+import com.college_project.hexconverter.controllers.InputValidation;
 
 public class HexToDecActivity extends AppCompatActivity {
 
@@ -18,6 +20,10 @@ public class HexToDecActivity extends AppCompatActivity {
 
 
     public void convertHexToDec(View view) {
+        String hexValueAsString = ((EditText) findViewById(R.id.hexValue)).getText().toString();
+        if(InputValidation.isStringConvertibleFromHexToDec(hexValueAsString)){
+
+        }
     }
 
 

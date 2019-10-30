@@ -11,6 +11,9 @@ import java.util.Hashtable;
 import java.util.Map;
 
 import com.college_project.hexconverter.R;
+import com.college_project.hexconverter.models.factories.HexidecimalFactories.HexWithPrefixHexidecimalDisplayFactory;
+import com.college_project.hexconverter.models.factories.HexidecimalFactories.OneStringHexidecimalDisplayFactory;
+import com.college_project.hexconverter.models.factories.HexidecimalFactories.SpacedHexidecimalDisplayFactory;
 
 import static com.college_project.hexconverter.activites.MainActivity.HEX_OF_VALUE_INTENT_EXTRA_NAME;
 
@@ -75,36 +78,22 @@ public class DecToHexActivity extends AppCompatActivity {
         TextView textView = (TextView) findViewById(R.id.hexValue);
         System.out.println("my key: " + key);
 
-        if(key.equals(ONE_STRING))
-            textView.setText(hexOfValue);
+        if(key.equals(ONE_STRING)) {
+            OneStringHexidecimalDisplayFactory oneStringHexidecimalFactory = new OneStringHexidecimalDisplayFactory();
+            String factoryValue = oneStringHexidecimalFactory.getHexidecimal(hexOfValue);
+            textView.setText(factoryValue);
+        }
 
-        else if(key.equals(HEX_PREFIX_ID))
-            textView.setText(HEX_PREFIX + hexOfValue);
+        else if(key.equals(HEX_PREFIX_ID)) {
+            HexWithPrefixHexidecimalDisplayFactory hexWithPrefixHexidecimalFactory = new HexWithPrefixHexidecimalDisplayFactory();
+            String factoryValue = hexWithPrefixHexidecimalFactory.getHexidecimal(hexOfValue);
+            textView.setText(factoryValue);
+        }
 
         else {
-            String value = hexOfValue;
-            if(value.length() > 2){
-
-                StringBuilder builder = new StringBuilder(
-                        value.length() + SPACE.length() * (value.length()/SPACING)+1);
-
-                int index = 0;
-                String prefix = "";
-                while (index < value.length())
-                {
-                    // Don't put the insert in the very first iteration.
-                    // This is easier than appending it *after* each substring
-                    builder.append(prefix);
-                    prefix = SPACE;
-                    builder.append(value.substring(index,
-                            Math.min(index + SPACING, value.length())));
-                    index += SPACING;
-                }
-
-                textView.setText(builder.toString());
-
-            } else
-                textView.setText(hexOfValue);
+            SpacedHexidecimalDisplayFactory spacedHexidecimalDisplayFactory = new SpacedHexidecimalDisplayFactory();
+            String factoryValue = spacedHexidecimalDisplayFactory.getHexidecimal(hexOfValue);
+            textView.setText(factoryValue);
         }
 
 

@@ -19,4 +19,15 @@ public class InputValidation {
         }
         return res;
     }
+
+    /**
+     * <p>validates input for the convertHexToDec in the HexToDecActivity before creating Intent.</p>
+     * @param hexValueAsString
+     * @return
+     */
+    public static boolean isStringConvertibleFromHexToDec(String hexValueAsString) {
+        boolean res = true;
+
+        return res;
+    }
 }
