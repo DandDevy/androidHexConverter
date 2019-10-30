@@ -1,4 +1,4 @@
-package com.college_project.hexconverter;
+package com.college_project.hexconverter.activites;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,10 @@ import android.widget.TextView;
 
 import java.util.Hashtable;
 import java.util.Map;
+
+import com.college_project.hexconverter.R;
+
+import static com.college_project.hexconverter.activites.MainActivity.HEX_OF_VALUE_INTENT_EXTRA_NAME;
 
 public class DecToHexActivity extends AppCompatActivity {
 
@@ -25,7 +29,7 @@ public class DecToHexActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dec_to_hex);
 
-        setHexOfValue();
+        getHexOfValue();
 
         TextView textView = (TextView) findViewById(R.id.hexValue);
 
@@ -35,12 +39,9 @@ public class DecToHexActivity extends AppCompatActivity {
     /**
      * <p>Sets the hexOfValue of the integer that the user selected that was passed by intent</p>
      */
-    private void setHexOfValue(){
-        String intValueAsString = getIntent().getStringExtra("intValue");
+    private void getHexOfValue(){
+        hexOfValue = getIntent().getStringExtra(HEX_OF_VALUE_INTENT_EXTRA_NAME);
 
-        int intValue = Integer.valueOf(intValueAsString);
-
-        hexOfValue = Integer.toString(intValue, 16);
     }
 
 
