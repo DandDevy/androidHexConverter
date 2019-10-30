@@ -9,7 +9,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class FactoryTesting {
+public class HexadecimalFactoryTesting {
     /**
      * <p>Checks the input of the method of getHexadecimal in OneStringHexadecimalDisplayFactory factory with a string</p>
      */
