@@ -9,9 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activites.HexToDecActivity"></activity>
-        <activity android:name=".activites.DecToHexActivity" />
-        <activity android:name=".activites.MainActivity">
+        <activity android:name=".views.activites.HexToDecActivity"></activity>
+        <activity android:name=".views.activites.DecToHexActivity" />
+        <activity android:name=".views.activites.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

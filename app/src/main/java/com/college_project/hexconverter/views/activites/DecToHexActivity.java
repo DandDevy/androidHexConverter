@@ -1,4 +1,4 @@
-package com.college_project.hexconverter.activites;
+package com.college_project.hexconverter.views.activites;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,7 +15,7 @@ import com.college_project.hexconverter.models.factories.HexadecimalFactories.He
 import com.college_project.hexconverter.models.factories.HexadecimalFactories.OneStringHexadecimalDisplayFactory;
 import com.college_project.hexconverter.models.factories.HexadecimalFactories.SpacedHexadecimalDisplayFactory;
 
-import static com.college_project.hexconverter.activites.MainActivity.HEX_OF_VALUE_INTENT_EXTRA_NAME;
+import static com.college_project.hexconverter.views.activites.MainActivity.HEX_OF_VALUE_INTENT_EXTRA_NAME;
 
 public class DecToHexActivity extends AppCompatActivity {
 

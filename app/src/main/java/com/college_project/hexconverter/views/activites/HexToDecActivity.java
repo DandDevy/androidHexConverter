@@ -1,4 +1,4 @@
-package com.college_project.hexconverter.activites;
+package com.college_project.hexconverter.views.activites;
 
 import androidx.appcompat.app.AppCompatActivity;
 

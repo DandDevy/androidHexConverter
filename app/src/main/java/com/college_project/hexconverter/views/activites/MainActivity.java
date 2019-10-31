@@ -1,4 +1,4 @@
-package com.college_project.hexconverter.activites;
+package com.college_project.hexconverter.views.activites;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,8 +10,9 @@ import android.widget.EditText;
 import com.college_project.hexconverter.R;
 import com.college_project.hexconverter.controllers.HexConverter;
 import com.college_project.hexconverter.controllers.InputValidation;
+import com.college_project.hexconverter.views.dialogs.MyAlertDialog;
 
-import static com.college_project.hexconverter.activites.HexToDecActivity.STRING_OF_INT_CONVERTED_FROM_HEX_INTENT_NAME;
+import static com.college_project.hexconverter.views.activites.HexToDecActivity.STRING_OF_INT_CONVERTED_FROM_HEX_INTENT_NAME;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -63,5 +64,10 @@ public class MainActivity extends AppCompatActivity {
         Intent hexToDecActivityintent = new Intent(this, HexToDecActivity.class);
 
         startActivity(hexToDecActivityintent);
+    }
+
+    public void alert(View view) {
+        MyAlertDialog myAlertDialog = new MyAlertDialog();
+        myAlertDialog.show(getSupportFragmentManager(), "my alert dialog");
     }
 }

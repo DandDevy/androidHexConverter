@@ -14,4 +14,7 @@
     <string name="viewWithHexPrefix">hex prefix</string>
     <string name="swap">swap</string>
     <string name="alert">alert</string>
+    <string name="dialogTitle">alert</string>
+    <string name="dialogMessage">alert you can use these buttons</string>
+    <string name="dialogPositiveButtonClose">close</string>
 </resources>
