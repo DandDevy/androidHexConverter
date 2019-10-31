@@ -14,4 +14,5 @@
     <string name="spaced">" espacé par octet"</string>
     <string name="viewWithHexPrefix">" préfixe hexadécimal"</string>
     <string name="swap">échanger</string>
+    <string name="alert">alerte</string>
 </resources>

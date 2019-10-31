@@ -99,6 +99,8 @@
             android:id="@+id/button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#05AAA5"
+            android:textColor="@android:color/white"
             android:onClick="returnToMain"
             android:text="@string/goBack" />
 
