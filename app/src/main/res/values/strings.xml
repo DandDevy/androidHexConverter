@@ -17,4 +17,5 @@
     <string name="dialogTitle">alert</string>
     <string name="dialogMessage">alert you can use these buttons</string>
     <string name="dialogPositiveButtonClose">close</string>
+    <string name="notify">notify</string>
 </resources>

@@ -109,6 +109,15 @@
                 android:textColor="@android:color/white"
                 android:onClick="alert"
                 android:text="@string/alert" />
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/holo_red_light"
+                android:textColor="@android:color/white"
+                android:onClick="addNotification"
+                android:text="notication" />
+
         </LinearLayout>
 
     </LinearLayout>
