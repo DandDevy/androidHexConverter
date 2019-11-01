@@ -29,9 +29,8 @@ public class MyAlertDialog extends AppCompatDialogFragment {
 
     private static final String NOTIFICATION_CHANNEL_ID = "notify_001";
     private static final int NOTIFICATION_ID = 999;
-    private static final CharSequence NOTIFICATION_CONTENT_TITLE = "hexy Converty notify";
-    private static final CharSequence NOTIFICATION_CONTENT_TEXT = "I gotta something for you!";
-    private static final CharSequence BIG_TEXT = "I actually don't know why we notified you.. BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH";
+    private static final String NUMBER_TO_CALL = "0210000000";
+
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -69,16 +68,16 @@ public class MyAlertDialog extends AppCompatDialogFragment {
 
 
     /**
-     * <p>Adds a notification</p>
+     * <p>Adds a notification that when pressed makes a call</p>
      */
     private void addNotification() {
         // Building my notification
         NotificationCompat.Builder builder = new NotificationCompat.Builder(getContext(),NOTIFICATION_CHANNEL_ID)
                 .setSmallIcon(R.mipmap.ic_launcher_round)
-                .setContentTitle(NOTIFICATION_CONTENT_TITLE)
-                .setContentText(NOTIFICATION_CONTENT_TEXT)
+                .setContentTitle(getString(R.string.notification_content_title))
+                .setContentText(getString(R.string.notification_content_text))
                 .setStyle(new NotificationCompat.BigTextStyle()
-                        .bigText(BIG_TEXT))
+                        .bigText(getString(R.string.notification_big_text)))
                 .setPriority(NotificationCompat.PRIORITY_MAX);
 
 
@@ -86,7 +85,7 @@ public class MyAlertDialog extends AppCompatDialogFragment {
 
 //        Intent notificationIntent = new Intent(getContext(), MainActivity.class);
         Intent intent = new Intent(Intent.ACTION_DIAL);
-        intent.setData(Uri.parse("tel:0210000000"));
+        intent.setData(Uri.parse("tel:"+NUMBER_TO_CALL));
 
 //        notificationIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
 
