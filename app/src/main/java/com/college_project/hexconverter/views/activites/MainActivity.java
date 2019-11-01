@@ -4,11 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
+import android.Manifest;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -41,8 +44,8 @@ public class MainActivity extends AppCompatActivity {
      */
     private void checkForIntentFromHexToDec() {
         String convertedHexToString = getIntent().getStringExtra(STRING_OF_INT_CONVERTED_FROM_HEX_INTENT_NAME);
-        
-        if(convertedHexToString != null){
+
+        if (convertedHexToString != null) {
             EditText editTextforInValue = (EditText) findViewById(R.id.intValue);
             editTextforInValue.setText(convertedHexToString);
         }
@@ -55,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
     public void convertDecToHex(View view) {
         String intValueAsString = ((EditText) findViewById(R.id.intValue)).getText().toString();
 
-        if(InputValidation.isStringConvertibleToHex(intValueAsString)) {
+        if (InputValidation.isStringConvertibleToHex(intValueAsString)) {
 
             String hexOfValue = HexConverter.stringOfIntToStringOfHex(intValueAsString);
 
@@ -86,4 +89,29 @@ public class MainActivity extends AppCompatActivity {
         myAlertDialog.show(getSupportFragmentManager(), MY_ALERT_DIALOG_TAG);
     }
 
+    public void call(View view) {
+        Intent notificationIntent = new Intent(Intent.ACTION_DIAL);
+        notificationIntent.setData(Uri.parse("tel:123456789"));
+        if (Build.VERSION.SDK_INT >= VERSION_CODES.M) {
+            if (checkSelfPermission(Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                // TODO: Consider calling
+                //    Activity#requestPermissions
+                // here to request the missing permissions, and then overriding
+                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                //                                          int[] grantResults)
+                // to handle the case where the user grants the permission. See the documentation
+                // for Activity#requestPermissions for more details.
+                return;
+            }
+        }
+        startActivity(notificationIntent);
+    }
+
+
+    public void call1(View view) {
+
+        Intent intent = new Intent(Intent.ACTION_DIAL);
+        intent.setData(Uri.parse("tel:0210000000"));
+        startActivity(intent);
+    }
 }
