@@ -26,6 +26,12 @@ import static androidx.core.content.ContextCompat.getSystemService;
 
 public class MyAlertDialog extends AppCompatDialogFragment {
 
+    private static final String NOTIFICATION_CHANNEL_ID = "notify_001";
+    private static final int NOTIFICATION_ID = 999;
+    private static final CharSequence NOTIFICATION_CONTENT_TITLE = "hexy Converty notify";
+    private static final CharSequence NOTIFICATION_CONTENT_TEXT = "I gotta something for you!";
+    private static final CharSequence BIG_TEXT = "I actually don't know why we notified you.. BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH";
+
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(getActivity());
@@ -52,28 +58,7 @@ public class MyAlertDialog extends AppCompatDialogFragment {
                 new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-
-
                         addNotification();
-//                        NotificationCompat.Builder builder = new NotificationCompat.Builder(getContext())
-//                                .setSmallIcon(R.mipmap.ic_launcher)
-//                                .setContentTitle("asd")
-//                                .setContentText("asd")
-//                                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
-//
-//
-//
-//                        // Creates the intent needed to show the notification
-//                        Intent notificationIntent = new Intent(getContext(), MainActivity.class);
-//                        PendingIntent contentIntent = PendingIntent.getActivity(getContext(), 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-//                        builder.setContentIntent(contentIntent);
-//
-//
-//                        // Add as notification
-//                        String string = getContext().NOTIFICATION_SERVICE;
-//                        NotificationManager manager = (NotificationManager) Objects.requireNonNull(getContext()).getSystemService(string);
-//                        manager.notify(0, builder.build());
-
                     }
                 });
 
@@ -82,15 +67,18 @@ public class MyAlertDialog extends AppCompatDialogFragment {
     }
 
 
+    /**
+     * <p>Adds a notification</p>
+     */
     private void addNotification() {
-        // Builds your notification
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(getContext(),"notify_002")
+        // Building my notification
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(getContext(),NOTIFICATION_CHANNEL_ID)
                 .setSmallIcon(R.mipmap.ic_launcher_round)
-                .setContentTitle("John's Android Studio Tutorials")
-                .setContentText("A video has just arrived!")
+                .setContentTitle(NOTIFICATION_CONTENT_TITLE)
+                .setContentText(NOTIFICATION_CONTENT_TEXT)
                 .setStyle(new NotificationCompat.BigTextStyle()
-                        .bigText("Much longer text that cannot fit one line..."))
-                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+                        .bigText(BIG_TEXT))
+                .setPriority(NotificationCompat.PRIORITY_MAX);
 
 
         // Creates the intent needed to show the notification
@@ -101,19 +89,18 @@ public class MyAlertDialog extends AppCompatDialogFragment {
 
         NotificationManager manager = (NotificationManager) getContext().getSystemService(getContext().NOTIFICATION_SERVICE);
 
-        // === Removed some obsoletes
+        // Removed some obsoletes
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
         {
-            String channelId = "notify_002";
             NotificationChannel channel = new NotificationChannel(
-                    channelId,
+                    NOTIFICATION_CHANNEL_ID,
                     "Channel human readable title",NotificationManager.IMPORTANCE_HIGH);
             manager.createNotificationChannel(channel);
-            builder.setChannelId(channelId);
+            builder.setChannelId(NOTIFICATION_CHANNEL_ID);
         }
 
         // Add as notification
 
-        manager.notify(9865, builder.build());
+        manager.notify(NOTIFICATION_ID, builder.build());
     }
 }
