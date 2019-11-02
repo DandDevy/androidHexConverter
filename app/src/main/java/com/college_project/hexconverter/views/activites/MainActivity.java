@@ -1,5 +1,6 @@
 package com.college_project.hexconverter.views.activites;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
@@ -31,11 +32,15 @@ public class MainActivity extends AppCompatActivity {
 
     public static final String HEX_OF_VALUE_INTENT_EXTRA_NAME = "hexOfValue";
     private static final String MY_ALERT_DIALOG_TAG = "my alert dialog";
+    private static final String OUTSTATE_STRING_DEC_VALUE = "valueInDec";
+    private String intValue = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        if(savedInstanceState != null)
+            intValue = savedInstanceState.getString(OUTSTATE_STRING_DEC_VALUE);
         checkForIntentFromHexToDec();
     }
 
@@ -45,7 +50,10 @@ public class MainActivity extends AppCompatActivity {
     private void checkForIntentFromHexToDec() {
         String convertedHexToString = getIntent().getStringExtra(STRING_OF_INT_CONVERTED_FROM_HEX_INTENT_NAME);
 
+
         if (convertedHexToString != null) {
+            intValue = convertedHexToString;
+
             EditText editTextforInValue = (EditText) findViewById(R.id.intValue);
             editTextforInValue.setText(convertedHexToString);
         }
@@ -57,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void convertDecToHex(View view) {
         String intValueAsString = ((EditText) findViewById(R.id.intValue)).getText().toString();
+        intValue = intValueAsString;
 
         if (InputValidation.isStringConvertibleToHex(intValueAsString)) {
 
@@ -87,5 +96,27 @@ public class MainActivity extends AppCompatActivity {
     public void alert(View view) {
         MyAlertDialog myAlertDialog = new MyAlertDialog();
         myAlertDialog.show(getSupportFragmentManager(), MY_ALERT_DIALOG_TAG);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        intValue = savedInstanceState.getString(OUTSTATE_STRING_DEC_VALUE);
+        if(intValue!=null) {
+            EditText editTextforInValue = (EditText) findViewById(R.id.intValue);
+            editTextforInValue.setText(intValue);
+        }
+
+    }
+
+
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        String intValueAsString = ((EditText) findViewById(R.id.intValue)).getText().toString();
+        intValue = intValueAsString;
+        outState.putString(OUTSTATE_STRING_DEC_VALUE, intValue);
     }
 }

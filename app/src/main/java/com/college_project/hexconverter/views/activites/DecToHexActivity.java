@@ -1,9 +1,11 @@
 package com.college_project.hexconverter.views.activites;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
@@ -25,6 +27,7 @@ public class DecToHexActivity extends AppCompatActivity {
     private static final int SPACING = 2;
     private static final String HEX_PREFIX_ID = "hexPrefix";
     private static final String HEX_PREFIX = "0x";
+    private static final String OUTSTATE_KEY_HEX_OF_VALUE = "outstateKeyHexOfValue";
     private static String hexOfValue;
 
     @Override
@@ -34,9 +37,9 @@ public class DecToHexActivity extends AppCompatActivity {
 
         getHexOfValue();
 
-        TextView textView = (TextView) findViewById(R.id.hexValue);
+        EditText editText = (EditText) findViewById(R.id.hexValue);
 
-        textView.setText(hexOfValue);
+        editText.setText(hexOfValue);
     }
 
     /**
@@ -117,5 +120,26 @@ public class DecToHexActivity extends AppCompatActivity {
         values.put(HEX_PREFIX_ID, hexPrefixRb.isChecked());
 
         return values;
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        TextView textView = (TextView) findViewById(R.id.hexValue);
+
+        hexOfValue = savedInstanceState.getString(OUTSTATE_KEY_HEX_OF_VALUE);
+        if(hexOfValue!=null)
+            textView.setText(hexOfValue);
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        TextView textView = (TextView) findViewById(R.id.hexValue);
+
+        hexOfValue = textView.getText().toString();
+
+        outState.putString(OUTSTATE_KEY_HEX_OF_VALUE, hexOfValue);
+
     }
 }
