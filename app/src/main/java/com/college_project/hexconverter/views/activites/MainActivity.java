@@ -12,12 +12,14 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.drawable.AnimationDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.os.Build.VERSION_CODES;
+import android.widget.ImageView;
 
 import com.college_project.hexconverter.R;
 import com.college_project.hexconverter.controllers.HexConverter;
@@ -34,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
     private static final String MY_ALERT_DIALOG_TAG = "my alert dialog";
     private static final String OUTSTATE_STRING_DEC_VALUE = "valueInDec";
     private String intValue = "";
+    private AnimationDrawable borderLoad;
+    private boolean animate = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +68,8 @@ public class MainActivity extends AppCompatActivity {
      * @param view
      */
     public void convertDecToHex(View view) {
+        if(borderLoad!=null)
+            borderLoad.stop();
         String intValueAsString = ((EditText) findViewById(R.id.intValue)).getText().toString();
         intValue = intValueAsString;
 
@@ -77,6 +83,28 @@ public class MainActivity extends AppCompatActivity {
 
             startActivity(decToHexConverter);
         }
+    }
+
+    /**
+     * <p>Animation</p>
+     */
+    public void animate(View view){
+        if(animate){
+            ImageView imageView = (ImageView)findViewById(R.id.imageView);
+            imageView.setBackgroundResource(R.drawable.animation);
+            borderLoad = (AnimationDrawable) imageView.getBackground();
+            animate = false;
+            borderLoad.start();
+
+        } else {
+            borderLoad.stop();
+//            ImageView imageView = (ImageView)findViewById(R.id.imageView);
+//            imageView.setImageResource(0);
+            animate = true;
+        }
+
+
+
     }
 
     /**

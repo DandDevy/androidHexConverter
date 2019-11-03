@@ -21,4 +21,5 @@
     <string name="notification_content_title">hexy Converty notify</string>
     <string name="notification_big_text">I got something for you! Press this notification to call 0210000000</string>
     <string name="notification_content_text">I got something for you!</string>
+    <string name="animate">animate</string>
 </resources>

@@ -22,4 +22,5 @@
     <string name="notification_content_title">notificateur convertisseur hexadécimal</string>
     <string name="notification_content_text">J\'ai quelque chose pour toi!</string>
     <string name="notification_big_text">J\'ai quelque chose pour toi! Appuyez sur cette notification pour appeler le 0210000000</string>
+    <string name="animate">animer</string>
 </resources>
