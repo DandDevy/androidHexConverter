@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:drawable="@drawable/border_botton"
+        android:duration="350"/>
+    <item
+        android:drawable="@drawable/border_left"
+        android:duration="350"/>
+    <item
+        android:drawable="@drawable/border_top"
+        android:duration="350"/>
+    <item
+        android:drawable="@drawable/border_right"
+        android:duration="350"/>
+    <item
+        android:drawable="@drawable/border_botton"
+        android:duration="350"/>
+
+</animation-list>
