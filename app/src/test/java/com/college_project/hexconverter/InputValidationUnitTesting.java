@@ -15,4 +15,12 @@ public class InputValidationUnitTesting {
     public void isStringConvertibleToHex_emptyString_isCorrect() {
         assertFalse(InputValidation.isStringConvertibleToHex(""));
     }
+    /**
+     * <p>Checks the input of the isStringConvertibleToHex method with an empty string</p>
+     */
+    @Test
+    public void isStringConvertibleFromHexToDec_isCorrect() {
+        assertFalse(InputValidation.isStringConvertibleFromHexToDec(""));
+        assertFalse(InputValidation.isStringConvertibleFromHexToDec("asd"));
+    }
 }

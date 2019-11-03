@@ -17,6 +17,17 @@ public class InputValidation {
         if(intValueAsString.length() == 0){
             res = false;
         }
+
+        else {
+            try {
+                HexConverter.stringOfIntToStringOfHex(intValueAsString);
+            } catch (Exception e){
+                res = false;
+            }
+
+        }
+
+
         return res;
     }
 
@@ -27,6 +38,19 @@ public class InputValidation {
      */
     public static boolean isStringConvertibleFromHexToDec(String hexValueAsString) {
         boolean res = true;
+
+        if(hexValueAsString.length() == 0)
+            res = false;
+
+        else {
+            try {
+                HexConverter.stringOfHexToStringOfInt(hexValueAsString);
+            } catch (Exception e){
+                res = false;
+            }
+        }
+
+
 
         return res;
     }
